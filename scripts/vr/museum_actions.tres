@@ -1,0 +1,154 @@
+[gd_resource type="OpenXRActionMap" load_steps=33 format=3]
+
+[sub_resource type="OpenXRAction" id="Aim"]
+resource_name = "aim_pose"
+localized_name = "Aim"
+action_type = 3
+toplevel_paths = PackedStringArray("/user/hand/left", "/user/hand/right")
+
+[sub_resource type="OpenXRAction" id="Trigger"]
+resource_name = "trigger"
+localized_name = "Trigger"
+action_type = 1
+toplevel_paths = PackedStringArray("/user/hand/left", "/user/hand/right")
+
+[sub_resource type="OpenXRAction" id="Turn"]
+resource_name = "turn"
+localized_name = "Snap turn"
+action_type = 2
+toplevel_paths = PackedStringArray("/user/hand/right")
+
+[sub_resource type="OpenXRAction" id="Move"]
+resource_name = "move"
+localized_name = "Smooth movement"
+action_type = 2
+toplevel_paths = PackedStringArray("/user/hand/left")
+
+[sub_resource type="OpenXRIPBinding" id="LeftStick"]
+action = SubResource("Move")
+binding_path = "/user/hand/left/input/thumbstick"
+
+[sub_resource type="OpenXRAction" id="Debug"]
+resource_name = "debug"
+localized_name = "Debug"
+action_type = 0
+toplevel_paths = PackedStringArray("/user/hand/left")
+
+[sub_resource type="OpenXRAction" id="Screenshot"]
+resource_name = "screenshot"
+localized_name = "Screenshot"
+action_type = 0
+toplevel_paths = PackedStringArray("/user/hand/left")
+
+[sub_resource type="OpenXRAction" id="BugReport"]
+resource_name = "bug_report"
+localized_name = "Bug report"
+action_type = 0
+toplevel_paths = PackedStringArray("/user/hand/right")
+
+[sub_resource type="OpenXRIPBinding" id="TouchDebug"]
+action = SubResource("Debug")
+binding_path = "/user/hand/left/input/x/click"
+
+[sub_resource type="OpenXRIPBinding" id="TouchScreenshot"]
+action = SubResource("Screenshot")
+binding_path = "/user/hand/left/input/y/click"
+
+[sub_resource type="OpenXRIPBinding" id="TouchBugReport"]
+action = SubResource("BugReport")
+binding_path = "/user/hand/right/input/b/click"
+
+[sub_resource type="OpenXRIPBinding" id="IndexDebug"]
+action = SubResource("Debug")
+binding_path = "/user/hand/left/input/a/click"
+
+[sub_resource type="OpenXRIPBinding" id="IndexScreenshot"]
+action = SubResource("Screenshot")
+binding_path = "/user/hand/left/input/b/click"
+
+[sub_resource type="OpenXRIPBinding" id="IndexBugReport"]
+action = SubResource("BugReport")
+binding_path = "/user/hand/right/input/b/click"
+
+[sub_resource type="OpenXRAction" id="Grip"]
+resource_name = "grip"
+localized_name = "Squeeze"
+action_type = 1
+toplevel_paths = PackedStringArray("/user/hand/left", "/user/hand/right")
+
+[sub_resource type="OpenXRIPBinding" id="TouchGrip"]
+action = SubResource("Grip")
+binding_path = "/user/hand/right/input/squeeze/value"
+
+[sub_resource type="OpenXRIPBinding" id="IndexGrip"]
+action = SubResource("Grip")
+binding_path = "/user/hand/right/input/squeeze/force"
+
+[sub_resource type="OpenXRAction" id="GripPose"]
+resource_name = "grip_pose"
+localized_name = "Grip pose"
+action_type = 3
+toplevel_paths = PackedStringArray("/user/hand/left", "/user/hand/right")
+
+[sub_resource type="OpenXRIPBinding" id="LeftGripPose"]
+action = SubResource("GripPose")
+binding_path = "/user/hand/left/input/grip/pose"
+
+[sub_resource type="OpenXRIPBinding" id="RightGripPose"]
+action = SubResource("GripPose")
+binding_path = "/user/hand/right/input/grip/pose"
+
+[sub_resource type="OpenXRIPBinding" id="TouchLeftGrip"]
+action = SubResource("Grip")
+binding_path = "/user/hand/left/input/squeeze/value"
+
+[sub_resource type="OpenXRIPBinding" id="IndexLeftGrip"]
+action = SubResource("Grip")
+binding_path = "/user/hand/left/input/squeeze/force"
+
+[sub_resource type="OpenXRAction" id="MenuToggle"]
+resource_name = "menu_toggle"
+localized_name = "Menu / Back"
+action_type = 0
+toplevel_paths = PackedStringArray("/user/hand/right")
+
+[sub_resource type="OpenXRIPBinding" id="MenuButton"]
+action = SubResource("MenuToggle")
+binding_path = "/user/hand/right/input/a/click"
+
+[sub_resource type="OpenXRActionSet" id="Lab"]
+resource_name = "lab"
+localized_name = "VR Lab"
+actions = [SubResource("Aim"), SubResource("Trigger"), SubResource("Turn"), SubResource("Move"), SubResource("Debug"), SubResource("Screenshot"), SubResource("BugReport"), SubResource("Grip"), SubResource("GripPose"), SubResource("MenuToggle")]
+
+[sub_resource type="OpenXRIPBinding" id="LeftAim"]
+action = SubResource("Aim")
+binding_path = "/user/hand/left/input/aim/pose"
+
+[sub_resource type="OpenXRIPBinding" id="RightAim"]
+action = SubResource("Aim")
+binding_path = "/user/hand/right/input/aim/pose"
+
+[sub_resource type="OpenXRIPBinding" id="LeftTrigger"]
+action = SubResource("Trigger")
+binding_path = "/user/hand/left/input/trigger/value"
+
+[sub_resource type="OpenXRIPBinding" id="RightTrigger"]
+action = SubResource("Trigger")
+binding_path = "/user/hand/right/input/trigger/value"
+
+[sub_resource type="OpenXRIPBinding" id="RightStick"]
+action = SubResource("Turn")
+binding_path = "/user/hand/right/input/thumbstick"
+
+[sub_resource type="OpenXRInteractionProfile" id="Touch"]
+interaction_profile_path = "/interaction_profiles/oculus/touch_controller"
+bindings = [SubResource("LeftAim"), SubResource("RightAim"), SubResource("LeftTrigger"), SubResource("RightTrigger"), SubResource("RightStick"), SubResource("LeftStick"), SubResource("TouchDebug"), SubResource("TouchScreenshot"), SubResource("TouchBugReport"), SubResource("TouchGrip"), SubResource("TouchLeftGrip"), SubResource("LeftGripPose"), SubResource("RightGripPose"), SubResource("MenuButton")]
+
+[sub_resource type="OpenXRInteractionProfile" id="Index"]
+interaction_profile_path = "/interaction_profiles/valve/index_controller"
+bindings = [SubResource("LeftAim"), SubResource("RightAim"), SubResource("LeftTrigger"), SubResource("RightTrigger"), SubResource("RightStick"), SubResource("LeftStick"), SubResource("IndexDebug"), SubResource("IndexScreenshot"), SubResource("IndexBugReport"), SubResource("IndexGrip"), SubResource("IndexLeftGrip"), SubResource("LeftGripPose"), SubResource("RightGripPose"), SubResource("MenuButton")]
+
+[resource]
+action_sets = [SubResource("Lab")]
+interaction_profiles = [SubResource("Touch"), SubResource("Index")]

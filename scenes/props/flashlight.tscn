@@ -1,0 +1,34 @@
+[gd_scene format=3]
+
+[sub_resource type="StandardMaterial3D" id="Grip"]
+albedo_color = Color(0.09, 0.12, 0.13, 1)
+metallic = 0.42
+roughness = 0.5
+
+[sub_resource type="StandardMaterial3D" id="Brass"]
+albedo_color = Color(0.54, 0.42, 0.23, 1)
+metallic = 0.7
+
+[sub_resource type="CylinderMesh" id="Barrel"]
+material = SubResource("Grip")
+top_radius = 0.021
+bottom_radius = 0.021
+height = 0.23
+
+[sub_resource type="CylinderMesh" id="Head"]
+material = SubResource("Brass")
+top_radius = 0.021
+bottom_radius = 0.032
+height = 0.06
+
+[node name="Flashlight" type="Node3D"]
+
+[node name="Grip" type="MeshInstance3D" parent="."]
+position = Vector3(0, 0.035, 0.03)
+rotation = Vector3(1.5707963, 0, 0)
+mesh = SubResource("Barrel")
+
+[node name="Head" type="MeshInstance3D" parent="."]
+position = Vector3(0, 0.035, -0.115)
+rotation = Vector3(1.5707963, 0, 0)
+mesh = SubResource("Head")

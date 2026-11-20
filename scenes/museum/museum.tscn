@@ -1,0 +1,50 @@
+[gd_scene load_steps=9 format=3]
+
+[ext_resource type="Script" path="res://scripts/museum/museum_world.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/museum/museum_manager.gd" id="2"]
+[ext_resource type="PackedScene" path="res://scenes/player/player.tscn" id="3"]
+[ext_resource type="Script" path="res://scripts/diagnostics/developer_capture.gd" id="4"]
+[ext_resource type="Script" path="res://scripts/diagnostics/world_diagnostics.gd" id="6"]
+[ext_resource type="Script" path="res://scripts/museum/museum_effects.gd" id="7"]
+
+[ext_resource type="Script" path="res://scripts/museum/outdoor_audio.gd" id="8"]
+
+[sub_resource type="Environment" id="Environment"]
+
+[node name="Museum" type="Node3D"]
+script = ExtResource("1")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment")
+
+[node name="Sun" type="DirectionalLight3D" parent="."]
+rotation_degrees = Vector3(-34.1, -64, 0)
+light_color = Color(1, 0.91, 0.78, 1)
+light_energy = 1.28
+light_angular_distance = 0.55
+shadow_enabled = true
+directional_shadow_max_distance = 60.0
+shadow_bias = 0.05
+shadow_normal_bias = 0.25
+
+[node name="ChunkManager" type="Node3D" parent="." node_paths=PackedStringArray("player")]
+script = ExtResource("2")
+player = NodePath("../Player")
+
+[node name="Player" parent="." groups=["player"] instance=ExtResource("3")]
+position = Vector3(0, 0.1, 5)
+
+[node name="VisualEffects" type="Node" parent="."]
+script = ExtResource("7")
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+script = ExtResource("8")
+bus = &"Settings_music"
+pitch_scale = 0.95
+
+[node name="DeveloperCapture" type="Node" parent="."]
+script = ExtResource("4")
+
+[node name="WorldDiagnostics" type="Node3D" parent="."]
+script = ExtResource("6")

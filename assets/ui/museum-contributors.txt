@@ -1,0 +1,106 @@
+Museum of U
+
+Game code © 2026 Erfan. MIT License (see below).
+Original sample photographs, soundtrack and sounds by Erfan, included with permission.
+
+ambientCG · CC0 1.0
+
+ambientCG
+Concrete 034 • Ground 048 • Marble 012 • Painted Plaster 017
+
+
+Blendkit · CC0 1.0
+
+3d-render.nl
+European White Birch Bark
+
+Amanpreet Bajwa
+Palm Tree Medium Dense
+
+Blendkit Community
+Ahorn tree
+
+Esparza Rudy
+Southern Magnolia
+
+FortaMesh Moezi
+Marina Bench without Backrest
+
+Nik Kottmann
+Bear Sculpture (Photoscanned) • Sculpture (Photoscanned) • Statue (Photoscanned)
+
+PBRPX
+Rock Mossy Ground
+
+Poly Haven
+Antique Ceramic Vase 01 • Carved Wooden Elephant • Ceramic Vase 02 • Drawer Cabinet • Fern 02 • Fir Tree 01 • Hanging Industrial Lamp • Horse Statue 01 • Industrial Storage Cart • Industrial Wall Lamp • Painted Wooden Sofa • Potted Plant 01 • Potted Plant 04 • Steel Frame Shelves 01 • Tool Cart • Watering Can Metal 01 • Wooden Crate 01 • Wooden Ladder • Wooden Table 03
+
+SaschQuasch a.k.a Pawel Fieduna
+Cardboard Box SQ01
+
+Slinc_HD Janzen
+High grass clump
+
+
+Poly Haven · CC0 1.0
+
+Amal Kumar
+Planter Pot Clay
+
+Charlotte Baglioni
+Leafy Grass
+
+Dario Barresi
+Gravelly Sand
+
+Greg Zaal, Jarod Guest
+Kloofendal 48d Partly Cloudy (Pure Sky)
+
+James Ray Cock
+Ceramic Vase 01
+
+Jenelle van Heerden
+Oak Veneer 01
+
+Rico Cilliers
+Marble Bust 01 • Potted Plant 02
+
+Rob Tuytel
+Forest Leaves 02
+
+Sergej Majboroda
+Autumn Park
+
+
+Grab3D · CC0 1.0
+
+Grab3D
+Park Bench
+
+
+Godot XR Tools · CC0 1.0
+
+Miodrag Sejic (DigitalN8m4r3)
+VR hand models and poses
+
+MIT License
+
+Copyright (c) 2026 Erfan
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.

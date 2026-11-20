@@ -1,0 +1,80 @@
+[gd_scene format=3]
+
+[sub_resource type="StandardMaterial3D" id="Paint"]
+resource_name = "Material"
+albedo_color = Color(0.83, 0.81, 0.75, 1)
+roughness = 0.88
+
+[sub_resource type="StandardMaterial3D" id="Hardware"]
+albedo_color = Color(0.40, 0.31, 0.16, 1)
+metallic = 0.72
+roughness = 0.34
+
+[sub_resource type="BoxMesh" id="Leaf"]
+material = SubResource("Paint")
+size = Vector3(0.972, 2.415, 0.04572)
+
+[sub_resource type="BoxMesh" id="Jamb"]
+material = SubResource("Paint")
+size = Vector3(0.0353, 2.47416, 0.12)
+
+[sub_resource type="BoxMesh" id="Lintel"]
+material = SubResource("Paint")
+size = Vector3(0.9753, 0.03576, 0.12)
+
+[sub_resource type="BoxMesh" id="Spindle"]
+material = SubResource("Hardware")
+size = Vector3(0.027, 0.032, 0.117)
+
+[sub_resource type="BoxMesh" id="Lever"]
+material = SubResource("Hardware")
+size = Vector3(0.126, 0.026, 0.024)
+
+[sub_resource type="Animation" id="Swing"]
+resource_name = "Open"
+length = 0.88
+tracks/0/type = "value"
+tracks/0/path = NodePath("Hinge:rotation:y")
+tracks/0/keys = {"times": PackedFloat32Array(0, 0.1, 0.8, 0.88), "transitions": PackedFloat32Array(1, 1, 1, 1), "values": [0.0, 0.0, -1.5707963, -1.5707963]}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Hinge/Handle:rotation:z")
+tracks/1/keys = {"times": PackedFloat32Array(0, 0.1, 0.24), "transitions": PackedFloat32Array(1, 1, 1), "values": [0.0, 0.30, 0.0]}
+
+[sub_resource type="AnimationLibrary" id="Animations"]
+_data = {&"Open": SubResource("Swing")}
+
+[node name="Door" type="Node3D"]
+
+[node name="LeftJamb" type="MeshInstance3D" parent="."]
+position = Vector3(-0.5053, 1.23708, 0.0053)
+mesh = SubResource("Jamb")
+
+[node name="RightJamb" type="MeshInstance3D" parent="."]
+position = Vector3(0.5053, 1.23708, 0.0053)
+mesh = SubResource("Jamb")
+
+[node name="Lintel" type="MeshInstance3D" parent="."]
+position = Vector3(0, 2.45628, 0.0053)
+mesh = SubResource("Lintel")
+
+[node name="Hinge" type="Node3D" parent="."]
+position = Vector3(-0.488, 0, 0.0727)
+
+[node name="Leaf" type="MeshInstance3D" parent="Hinge"]
+position = Vector3(0.488, 1.2292, -0.026044)
+mesh = SubResource("Leaf")
+
+[node name="Handle" type="MeshInstance3D" parent="Hinge"]
+position = Vector3(0.89, 1.05, -0.026044)
+mesh = SubResource("Spindle")
+
+[node name="FrontLever" type="MeshInstance3D" parent="Hinge/Handle"]
+position = Vector3(-0.0495, 0, 0.0705)
+mesh = SubResource("Lever")
+
+[node name="BackLever" type="MeshInstance3D" parent="Hinge/Handle"]
+position = Vector3(-0.0495, 0, -0.0705)
+mesh = SubResource("Lever")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {&"": SubResource("Animations")}
