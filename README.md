@@ -9,9 +9,22 @@ Turn a folder of photographs into a museum you can walk through. Bring a family 
 
 ![The arrival gallery as seen on the title screen, with framed photographs, sculptures on plinths, and an arched doorway](assets/ui/museum_backdrop.png)
 
-## Take your first walk
+## Quick Start
 
-1. Open `project.godot` in the standard Godot 4.7.x editor. Wait for the first import, then press **F5** to run the project. From a terminal, run `godot --headless --import` followed by `godot` in the project root.
+No need to install Godot or build anything yourself. Just download the game and start exploring.
+
+1. Visit the **[Museum of U V1.0 Releases page](https://github.com/fellowgeek/museum-of-u/releases/tag/V1.0)**.
+2. Download the appropriate binary for your operating system from the **Assets** section.
+3. Extract the downloaded archive if necessary, then launch **Museum of U**.
+4. Select **New visit → Start** to explore the museum with the included sample photographs.
+
+Want to make the museum your own? Select **Open photos folder** from the title screen and add your favorite pictures.
+
+## Run from Source
+
+Prefer to run the project directly or make modifications? You'll need the standard **Godot 4.7.x** editor.
+
+1. Open `project.godot` in Godot. Wait for the first import, then press **F5** to run the project. From a terminal, run `godot --headless --import` followed by `godot` in the project root.
 2. Choose **New visit → Start**. The museum places sample photographs in an empty library, so you can explore right away.
 3. Walk with **W A S D**, look around with the **mouse**, and press **Esc** to pause.
 
